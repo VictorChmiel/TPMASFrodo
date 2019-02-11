@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="src/frodo2/algorithms/XCSPschemaJaCoP.xsd">
+  <presentation name="partyProblem_1548914177647" format="XCSP 2.1_FRODO" maxConstraintArity="4">
+    <stats name="margin of error">0.0</stats>
+    <stats name="equilibrium type">pure Nash</stats>
+    <stats name="number of players">7</stats>
+    <stats name="party graph average density">0.2857142857142857</stats>
+    <stats name="number of disconnected components of the party graph">1</stats>
+    <stats name="party graph max degree">3</stats>
+  </presentation>
+  <agents nbAgents="7">
+    <agent name="a0" />
+    <agent name="a1" />
+    <agent name="a2" />
+    <agent name="a3" />
+    <agent name="a4" />
+    <agent name="a5" />
+    <agent name="a6" />
+  </agents>
+  <domains nbDomains="1">
+    <domain name="Strategies" nbValues="2">0 1</domain>
+  </domains>
+  <variables nbVariables="7">
+    <variable name="p0" domain="Strategies" agent="a0" />
+    <variable name="p1" domain="Strategies" agent="a1" />
+    <variable name="p2" domain="Strategies" agent="a2" />
+    <variable name="p3" domain="Strategies" agent="a3" />
+    <variable name="p4" domain="Strategies" agent="a4" />
+    <variable name="p5" domain="Strategies" agent="a5" />
+    <variable name="p6" domain="Strategies" agent="a6" />
+  </variables>
+  <relations nbRelations="7">
+    <relation name="p0_rel" arity="3" semantics="conflicts" nbTuples="4">0 0 0|
+0 1 1|
+1 0 0|
+1 1 0</relation>
+    <relation name="p1_rel" arity="4" semantics="conflicts" nbTuples="8">0 0 0 0|
+0 0 1 1|
+0 1 0 0|
+0 1 1 0|
+1 0 0 0|
+1 0 1 0|
+1 1 0 0|
+1 1 1 0</relation>
+    <relation name="p2_rel" arity="4" semantics="conflicts" nbTuples="8">0 0 0 1|
+0 0 1 0|
+0 1 0 0|
+0 1 1 0|
+1 0 0 0|
+1 0 1 0|
+1 1 0 0|
+1 1 1 0</relation>
+    <relation name="p3_rel" arity="2" semantics="conflicts" nbTuples="2">0 0|
+1 0</relation>
+    <relation name="p4_rel" arity="2" semantics="conflicts" nbTuples="2">0 1|
+1 0</relation>
+    <relation name="p5_rel" arity="2" semantics="conflicts" nbTuples="2">0 1|
+1 1</relation>
+    <relation name="p6_rel" arity="2" semantics="conflicts" nbTuples="2">0 0|
+1 0</relation>
+  </relations>
+  <constraints nbConstraints="7">
+    <constraint name="p0_const" agent="a0" arity="3" scope="p1 p2 p0" reference="p0_rel" />
+    <constraint name="p1_const" agent="a1" arity="4" scope="p0 p3 p4 p1" reference="p1_rel" />
+    <constraint name="p2_const" agent="a2" arity="4" scope="p0 p5 p6 p2" reference="p2_rel" />
+    <constraint name="p3_const" agent="a3" arity="2" scope="p1 p3" reference="p3_rel" />
+    <constraint name="p4_const" agent="a4" arity="2" scope="p1 p4" reference="p4_rel" />
+    <constraint name="p5_const" agent="a5" arity="2" scope="p2 p5" reference="p5_rel" />
+    <constraint name="p6_const" agent="a6" arity="2" scope="p2 p6" reference="p6_rel" />
+  </constraints>
+</instance>

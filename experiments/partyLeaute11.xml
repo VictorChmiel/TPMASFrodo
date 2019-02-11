@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="src/frodo2/algorithms/XCSPschemaJaCoP.xsd">
+  <presentation name="partyProblem_1548914177647" format="XCSP 2.1_FRODO" maxConstraintArity="4">
+    <stats name="margin of error">0.0</stats>
+    <stats name="equilibrium type">pure Nash</stats>
+    <stats name="number of players">7</stats>
+    <stats name="party graph average density">0.2857142857142857</stats>
+    <stats name="number of disconnected components of the party graph">1</stats>
+    <stats name="party graph max degree">3</stats>
+  </presentation>
+  <agents nbAgents="7">
+    <agent name="a0" />
+    <agent name="a1" />
+    <agent name="a2" />
+    <agent name="a3" />
+    <agent name="a4" />
+    <agent name="a5" />
+    <agent name="a6" />
+  </agents>
+  <domains nbDomains="1">
+    <domain name="Strategies" nbValues="2">0 1</domain>
+  </domains>
+  <variables nbVariables="19">
+    <variable name="p0s0" domain="Strategies" agent="a0" />
+    <variable name="p0s1" domain="Strategies" agent="a0" />
+    <variable name="p0s2" domain="Strategies" agent="a0" />
+    <variable name="p1s1" domain="Strategies" agent="a1" />
+    <variable name="p1s0" domain="Strategies" agent="a1" />
+    <variable name="p1s3" domain="Strategies" agent="a1" />
+    <variable name="p1s4" domain="Strategies" agent="a1" />
+    <variable name="p2s2" domain="Strategies" agent="a2" />
+    <variable name="p2s0" domain="Strategies" agent="a2" />
+    <variable name="p2s5" domain="Strategies" agent="a2" />
+    <variable name="p2s6" domain="Strategies" agent="a2" />
+    <variable name="p3s3" domain="Strategies" agent="a3" />
+    <variable name="p3s1" domain="Strategies" agent="a3" />
+    <variable name="p4s4" domain="Strategies" agent="a4" />
+    <variable name="p4s1" domain="Strategies" agent="a4" />
+    <variable name="p5s5" domain="Strategies" agent="a5" />
+    <variable name="p5s2" domain="Strategies" agent="a5" />
+    <variable name="p6s6" domain="Strategies" agent="a6" />
+    <variable name="p6s2" domain="Strategies" agent="a6" />
+  </variables>
+  <relations nbRelations="7">
+    <relation name="p0_rel" arity="3" semantics="conflicts" nbTuples="4">0 0 0|
+0 1 1|
+1 0 0|
+1 1 0</relation>
+    <relation name="p1_rel" arity="4" semantics="conflicts" nbTuples="8">0 0 0 0|
+0 0 1 1|
+0 1 0 0|
+0 1 1 0|
+1 0 0 0|
+1 0 1 0|
+1 1 0 0|
+1 1 1 0</relation>
+    <relation name="p2_rel" arity="4" semantics="conflicts" nbTuples="8">0 0 0 1|
+0 0 1 0|
+0 1 0 0|
+0 1 1 0|
+1 0 0 0|
+1 0 1 0|
+1 1 0 0|
+1 1 1 0</relation>
+    <relation name="p3_rel" arity="2" semantics="conflicts" nbTuples="2">0 0|
+1 0</relation>
+    <relation name="p4_rel" arity="2" semantics="conflicts" nbTuples="2">0 1|
+1 0</relation>
+    <relation name="p5_rel" arity="2" semantics="conflicts" nbTuples="2">0 1|
+1 1</relation>
+    <relation name="p6_rel" arity="2" semantics="conflicts" nbTuples="2">0 0|
+1 0</relation>
+  </relations>
+  <predicates nbPredicates="1">
+    <predicate name="EQ">
+      <parameters>int X int Y</parameters>
+      <expression>
+        <functional>eq(X, Y)</functional>
+      </expression>
+    </predicate>
+  </predicates>
+  <constraints nbConstraints="19">
+    <constraint name="p0s1_EQ_p1s1" arity="2" scope="p0s1 p1s1" reference="EQ">
+      <parameters>p0s1 p1s1</parameters>
+    </constraint>
+    <constraint name="p0s2_EQ_p2s2" arity="2" scope="p0s2 p2s2" reference="EQ">
+      <parameters>p0s2 p2s2</parameters>
+    </constraint>
+    <constraint name="p0_const" arity="3" scope="p0s1 p0s2 p0s0" reference="p0_rel" />
+    <constraint name="p1s0_EQ_p0s0" arity="2" scope="p1s0 p0s0" reference="EQ">
+      <parameters>p1s0 p0s0</parameters>
+    </constraint>
+    <constraint name="p1s3_EQ_p3s3" arity="2" scope="p1s3 p3s3" reference="EQ">
+      <parameters>p1s3 p3s3</parameters>
+    </constraint>
+    <constraint name="p1s4_EQ_p4s4" arity="2" scope="p1s4 p4s4" reference="EQ">
+      <parameters>p1s4 p4s4</parameters>
+    </constraint>
+    <constraint name="p1_const" arity="4" scope="p1s0 p1s3 p1s4 p1s1" reference="p1_rel" />
+    <constraint name="p2s0_EQ_p0s0" arity="2" scope="p2s0 p0s0" reference="EQ">
+      <parameters>p2s0 p0s0</parameters>
+    </constraint>
+    <constraint name="p2s5_EQ_p5s5" arity="2" scope="p2s5 p5s5" reference="EQ">
+      <parameters>p2s5 p5s5</parameters>
+    </constraint>
+    <constraint name="p2s6_EQ_p6s6" arity="2" scope="p2s6 p6s6" reference="EQ">
+      <parameters>p2s6 p6s6</parameters>
+    </constraint>
+    <constraint name="p2_const" arity="4" scope="p2s0 p2s5 p2s6 p2s2" reference="p2_rel" />
+    <constraint name="p3s1_EQ_p1s1" arity="2" scope="p3s1 p1s1" reference="EQ">
+      <parameters>p3s1 p1s1</parameters>
+    </constraint>
+    <constraint name="p3_const" arity="2" scope="p3s1 p3s3" reference="p3_rel" />
+    <constraint name="p4s1_EQ_p1s1" arity="2" scope="p4s1 p1s1" reference="EQ">
+      <parameters>p4s1 p1s1</parameters>
+    </constraint>
+    <constraint name="p4_const" arity="2" scope="p4s1 p4s4" reference="p4_rel" />
+    <constraint name="p5s2_EQ_p2s2" arity="2" scope="p5s2 p2s2" reference="EQ">
+      <parameters>p5s2 p2s2</parameters>
+    </constraint>
+    <constraint name="p5_const" arity="2" scope="p5s2 p5s5" reference="p5_rel" />
+    <constraint name="p6s2_EQ_p2s2" arity="2" scope="p6s2 p2s2" reference="EQ">
+      <parameters>p6s2 p2s2</parameters>
+    </constraint>
+    <constraint name="p6_const" arity="2" scope="p6s2 p6s6" reference="p6_rel" />
+  </constraints>
+</instance>
